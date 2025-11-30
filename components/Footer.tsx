@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Search } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -57,14 +57,14 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Newsletter / Action */}
+          {/* Property Search */}
           <div>
-             <h4 className="text-white font-bold mb-6">Stay Updated</h4>
-             <p className="text-sm text-gray-400 mb-4">Receive exclusive offers and travel tips.</p>
+             <h4 className="text-white font-bold mb-6">Find Your Property</h4>
+             <p className="text-sm text-gray-400 mb-4">Enter Property ID to view details directly.</p>
              <div className="flex">
-                 <input type="email" placeholder="Your email" className="bg-slate-800 text-white px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-amber-500 w-full text-sm" />
+                 <input type="text" placeholder="Property ID" className="bg-slate-800 text-white px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-amber-500 w-full text-sm" />
                  <button className="bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-r-md transition-colors">
-                    <ArrowRight className="h-4 w-4 text-white" />
+                    <Search className="h-4 w-4 text-white" />
                  </button>
              </div>
           </div>
