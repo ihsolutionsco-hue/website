@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 items-center">
             <Link to="/" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Home</Link>
-            <a href="/#properties" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Properties</a>
+            <Link to="/properties" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Properties</Link>
             <Link to="/attractions" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Local Attractions</Link>
             <Link to="/contact" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Contact Us</Link>
           </nav>

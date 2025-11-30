@@ -6,6 +6,7 @@ import { AIChat } from './components/AIChat';
 import { HomePage } from './pages/HomePage';
 import { ContactPage } from './pages/ContactPage';
 import { AttractionsPage } from './pages/AttractionsPage';
+import { PropertiesPage } from './pages/PropertiesPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/properties" element={<PropertiesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/attractions" element={<AttractionsPage />} />
           </Routes>

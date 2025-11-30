@@ -1,7 +1,14 @@
 import React from 'react';
 import { Search, Calendar, Users, Home } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate('/properties');
+  };
+
   return (
     <div className="relative pt-20 pb-16 md:pt-32 md:pb-24 flex items-center justify-center min-h-[600px] bg-gray-900 overflow-hidden">
       {/* Background Image */}
@@ -78,7 +85,10 @@ export const Hero: React.FC = () => {
 
             {/* Search Button */}
             <div className="pl-4 py-2 flex items-center justify-center md:justify-end">
-              <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-full p-4 shadow-lg flex items-center justify-center transition-all transform hover:scale-105 active:scale-95 w-full md:w-auto">
+              <button 
+                onClick={handleSearch}
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white rounded-full p-4 shadow-lg flex items-center justify-center transition-all transform hover:scale-105 active:scale-95 w-full md:w-auto"
+              >
                 <Search className="w-5 h-5 font-bold" />
                 <span className="md:hidden ml-2 font-bold">Search</span>
               </button>
