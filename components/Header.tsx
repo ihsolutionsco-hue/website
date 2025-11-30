@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center cursor-pointer">
-            <img src="/logo.jpeg" alt="IHM Vacations Logo" className="h-16 w-auto object-contain" />
+            <img src="/logo.png" alt="IHM Vacations Logo" className="h-16 w-auto object-contain" />
           </div>
 
           {/* Desktop Navigation */}

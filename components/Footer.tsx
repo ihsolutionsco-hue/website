@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="space-y-4">
             <div className="bg-white p-3 rounded-lg inline-block">
-                <img src="/logo.jpeg" alt="IHM Vacations Logo" className="h-12 w-auto object-contain" />
+                <img src="/logo.png" alt="IHM Vacations Logo" className="h-12 w-auto object-contain" />
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
               Providing exceptional hospitality management and vacation experiences in Central Florida since 2010.
