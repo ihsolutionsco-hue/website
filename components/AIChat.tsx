@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Bot, Loader2 } from 'lucide-react';
 import { ChatMessage, ChatRole } from '../types';
-import { streamConciergeResponse } from '../services/geminiService';
+import { streamMessageToMake } from '../services/makeService';
 import ReactMarkdown from 'react-markdown';
 
 export const AIChat: React.FC = () => {
@@ -33,7 +33,10 @@ export const AIChat: React.FC = () => {
       // Create a temporary message for the stream
       setMessages(prev => [...prev, { role: ChatRole.MODEL, text: '' }]);
 
-      const streamResult = await streamConciergeResponse(messages, userMsg);
+      // Obtener el historial actualizado (incluyendo el mensaje del usuario que acabamos de agregar)
+      const currentHistory = [...messages, { role: ChatRole.USER, text: userMsg }];
+      
+      const streamResult = streamMessageToMake(currentHistory, userMsg);
       
       let fullResponse = '';
       for await (const chunk of streamResult) {
@@ -49,7 +52,21 @@ export const AIChat: React.FC = () => {
       }
 
     } catch (error) {
-      setMessages(prev => [...prev, { role: ChatRole.MODEL, text: "I'm having trouble connecting right now. Please try again later or call our support line." }]);
+      console.error('Error en el chat:', error);
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : "I'm having trouble connecting right now. Please try again later or call our support line.";
+      setMessages(prev => {
+        const newHistory = [...prev];
+        // Si el último mensaje está vacío, reemplazarlo con el error
+        if (newHistory[newHistory.length - 1]?.text === '') {
+          newHistory[newHistory.length - 1] = { role: ChatRole.MODEL, text: errorMessage };
+        } else {
+          // Si no, agregar un nuevo mensaje de error
+          newHistory.push({ role: ChatRole.MODEL, text: errorMessage });
+        }
+        return newHistory;
+      });
     } finally {
       setIsLoading(false);
     }
