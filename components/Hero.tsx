@@ -15,6 +15,11 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+        {/* Brand Logo - Big and Visible */}
+        <div className="mb-8 inline-block p-6 rounded-3xl bg-white/95 shadow-2xl backdrop-blur-md transform hover:scale-105 transition-transform duration-300">
+             <img src="/logo.png" alt="IHM Vacations" className="h-24 md:h-32 w-auto object-contain" />
+        </div>
+
         <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-4 drop-shadow-lg">
           Plan the vacation <br className="hidden md:block" />
           <span className="text-amber-400">of a lifetime</span>
