@@ -24,9 +24,9 @@ export const Header: React.FC = () => {
 
           {/* Right Side Actions */}
           <div className="hidden md:flex items-center space-x-4">
-             <a href="#" className="text-xs font-semibold text-gray-500 hover:text-slate-900">Current Owner</a>
+             <a href="https://ihmvacations.trackhs.com/owner" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-gray-500 hover:text-slate-900">Current Owner</a>
              <span className="text-gray-300">|</span>
-             <a href="#" className="text-xs font-semibold text-gray-500 hover:text-slate-900">Current Guest</a>
+             <a href="https://ihmvacations.trackhs.com/guest/#!/login/" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-gray-500 hover:text-slate-900">Current Guest</a>
              
              <Link to="/management" className="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl flex items-center">
                 Home Owner? Join us
@@ -54,8 +54,8 @@ export const Header: React.FC = () => {
             <Link to="/attractions" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Local Attractions</Link>
             <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Contact Us</Link>
             <hr className="my-2 border-gray-100"/>
-            <a href="#" className="block px-3 py-2 text-sm font-medium text-gray-500">Current Owner Login</a>
-            <a href="#" className="block px-3 py-2 text-sm font-medium text-gray-500">Current Guest Login</a>
+            <a href="https://ihmvacations.trackhs.com/owner" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-sm font-medium text-gray-500">Current Owner Login</a>
+            <a href="https://ihmvacations.trackhs.com/guest/#!/login/" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-sm font-medium text-gray-500">Current Guest Login</a>
             <Link to="/management" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-center text-sm font-bold text-white bg-amber-600 rounded-md mt-4">Home Owner? Join us now!</Link>
           </div>
         </div>
