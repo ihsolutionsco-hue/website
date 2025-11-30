@@ -17,10 +17,10 @@ export const Footer: React.FC = () => {
               Providing exceptional hospitality management and vacation experiences in Central Florida since 2010.
             </p>
             <div className="flex space-x-4 pt-4">
-              <a href="#" className="hover:text-amber-500 transition-colors"><Facebook className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-amber-500 transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-amber-500 transition-colors"><Instagram className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-amber-500 transition-colors"><Linkedin className="h-5 w-5" /></a>
+              <a href="https://www.facebook.com/IHMVacations" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors"><Facebook className="h-5 w-5" /></a>
+              <a href="https://x.com/ihmvacations" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors"><Twitter className="h-5 w-5" /></a>
+              <a href="https://www.instagram.com/ihmvacations/" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors"><Instagram className="h-5 w-5" /></a>
+              <a href="https://www.linkedin.com/company/ihmvacations" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors"><Linkedin className="h-5 w-5" /></a>
             </div>
           </div>
 
