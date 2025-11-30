@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,16 +10,16 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center cursor-pointer">
+          <Link to="/" className="flex items-center cursor-pointer">
             <img src="/logo.png" alt="IHM Vacations Logo" className="h-16 w-auto object-contain" />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 items-center">
-            <a href="#" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Home</a>
-            <a href="#properties" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Properties</a>
-            <a href="#attractions" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Local Attractions</a>
-            <a href="#contact" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Contact Us</a>
+            <Link to="/" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Home</Link>
+            <a href="/#properties" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Properties</a>
+            <Link to="/attractions" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Local Attractions</Link>
+            <Link to="/contact" className="text-sm font-medium text-gray-700 hover:text-amber-600 transition-colors">Contact Us</Link>
           </nav>
 
           {/* Right Side Actions */}
@@ -48,10 +49,10 @@ export const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
           <div className="px-4 pt-2 pb-6 space-y-1">
-            <a href="#" className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Home</a>
-            <a href="#properties" className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Properties</a>
-            <a href="#attractions" className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Local Attractions</a>
-            <a href="#contact" className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Contact Us</a>
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Home</Link>
+            <a href="/#properties" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Properties</a>
+            <Link to="/attractions" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Local Attractions</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md">Contact Us</Link>
             <hr className="my-2 border-gray-100"/>
             <a href="#" className="block px-3 py-2 text-sm font-medium text-gray-500">Current Owner Login</a>
             <a href="#" className="block px-3 py-2 text-sm font-medium text-gray-500">Current Guest Login</a>
