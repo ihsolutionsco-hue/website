@@ -10,7 +10,9 @@ export const Footer: React.FC = () => {
           
           {/* Brand Column */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white tracking-wider">IHM<span className="text-amber-500">VACATIONS</span></h3>
+            <div className="bg-white p-3 rounded-lg inline-block">
+                <img src="/logo.png" alt="IHM Vacations Logo" className="h-12 w-auto object-contain" />
+            </div>
             <p className="text-sm leading-relaxed text-gray-400">
               Providing exceptional hospitality management and vacation experiences in Central Florida since 2010.
             </p>

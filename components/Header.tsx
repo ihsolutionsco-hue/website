@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Globe, User, Plane, Home } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,14 +10,7 @@ export const Header: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center cursor-pointer">
-            <div className="flex flex-col items-center justify-center mr-2">
-                 <Home className="h-6 w-6 text-slate-800" />
-                 <Plane className="h-4 w-4 text-amber-600 -mt-2 ml-4" />
-            </div>
-            <div className="flex flex-col">
-                <span className="text-2xl font-extrabold text-slate-900 tracking-tight leading-none">IHM</span>
-                <span className="text-xs font-semibold text-slate-600 tracking-widest">VACATIONS</span>
-            </div>
+            <img src="/logo.png" alt="IHM Vacations Logo" className="h-16 w-auto object-contain" />
           </div>
 
           {/* Desktop Navigation */}
