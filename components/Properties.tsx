@@ -103,6 +103,11 @@ export const Properties: React.FC = () => {
                   src={property.image}
                   alt={property.title}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop"; // Fallback image
+                    target.onerror = null; // Prevent infinite loop
+                  }}
                 />
                 <button className="absolute top-3 right-3 p-2 rounded-full bg-white/70 hover:bg-white text-gray-900 transition-colors">
                   <Heart className="w-4 h-4" />
