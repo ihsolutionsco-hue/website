@@ -1,0 +1,191 @@
+/* Estilos base */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+
+/* Custom scrollbar for chat */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================
+   ESTILOS DE ACCESIBILIDAD
+   ============================================ */
+
+/* Alto Contraste */
+body.a11y-high-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.a11y-high-contrast *:not(img):not(video):not(iframe):not(svg) {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+body.a11y-high-contrast a,
+body.a11y-high-contrast a * {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+body.a11y-high-contrast button,
+body.a11y-high-contrast [role="button"],
+body.a11y-high-contrast input[type="button"],
+body.a11y-high-contrast input[type="submit"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+body.a11y-high-contrast img {
+  filter: contrast(1.5) brightness(1.2) !important;
+}
+
+/* Contraste Negativo (Invertido) - Aplicar al html pero excluir elementos de accesibilidad */
+html.a11y-negative-contrast {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+body.a11y-negative-contrast {
+  /* Mantener la clase en body para compatibilidad, pero el filtro va en html */
+}
+
+/* Excluir elementos de accesibilidad de los filtros - DEBE estar después del filtro */
+html.a11y-negative-contrast .a11y-tool,
+html.a11y-negative-contrast button.a11y-tool,
+html.a11y-negative-contrast [role="dialog"].a11y-tool,
+html.a11y-negative-contrast div.a11y-tool,
+body .a11y-tool,
+body button.a11y-tool,
+body [role="dialog"].a11y-tool,
+body div.a11y-tool {
+  filter: none !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+  isolation: isolate !important;
+}
+
+body.a11y-negative-contrast img,
+body.a11y-negative-contrast video,
+body.a11y-negative-contrast iframe,
+body.a11y-negative-contrast svg {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Escala de Grises - Aplicar al html pero excluir elementos de accesibilidad */
+html.a11y-grayscale {
+  filter: grayscale(100%) !important;
+}
+
+body.a11y-grayscale {
+  /* Mantener la clase en body para compatibilidad, pero el filtro va en html */
+}
+
+/* Excluir elementos de accesibilidad de los filtros - DEBE estar después del filtro */
+html.a11y-grayscale .a11y-tool,
+html.a11y-grayscale button.a11y-tool,
+html.a11y-grayscale [role="dialog"].a11y-tool,
+html.a11y-grayscale div.a11y-tool,
+body .a11y-tool,
+body button.a11y-tool,
+body [role="dialog"].a11y-tool,
+body div.a11y-tool {
+  filter: none !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+  isolation: isolate !important;
+}
+
+body.a11y-grayscale img,
+body.a11y-grayscale video,
+body.a11y-grayscale iframe {
+  filter: grayscale(100%) !important;
+}
+
+/* Fondo Claro */
+body.a11y-light-background {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.a11y-light-background *:not(img):not(video):not(iframe):not(svg) {
+  background-color: transparent !important;
+}
+
+body.a11y-light-background a,
+body.a11y-light-background a * {
+  color: #0066cc !important;
+}
+
+body.a11y-light-background button,
+body.a11y-light-background [role="button"],
+body.a11y-light-background input[type="button"],
+body.a11y-light-background input[type="submit"] {
+  background-color: #f0f0f0 !important;
+  color: #000000 !important;
+  border: 1px solid #cccccc !important;
+}
+
+/* Enlaces Subrayados */
+body.a11y-links-underline a {
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  text-decoration-thickness: 1.5px !important;
+}
+
+body.a11y-links-underline a:hover,
+body.a11y-links-underline a:focus {
+  text-decoration-thickness: 2.5px !important;
+}
+
+/* Fuente Legible */
+body.a11y-readable-font,
+body.a11y-readable-font * {
+  font-family: 'Arial', 'Helvetica', sans-serif !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.6 !important;
+}
+
+/* Asegurar que los estilos funcionen con Tailwind y sobrescriban clases de utilidad */
+body.a11y-high-contrast .bg-white,
+body.a11y-high-contrast .bg-gray-50,
+body.a11y-high-contrast .bg-gray-100,
+body.a11y-high-contrast .bg-slate-50,
+body.a11y-high-contrast .bg-slate-100,
+body.a11y-high-contrast [class*="bg-"] {
+  background-color: #000000 !important;
+}
+
+body.a11y-high-contrast .text-gray-700,
+body.a11y-high-contrast .text-gray-900,
+body.a11y-high-contrast .text-slate-900,
+body.a11y-high-contrast .text-gray-500,
+body.a11y-high-contrast .text-slate-500,
+body.a11y-high-contrast [class*="text-"]:not([class*="text-yellow"]):not([class*="text-green"]) {
+  color: #ffffff !important;
+}
+
+body.a11y-light-background .bg-white,
+body.a11y-light-background .bg-gray-50,
+body.a11y-light-background .bg-gray-100 {
+  background-color: #ffffff !important;
+}
+
+body.a11y-light-background .text-gray-700,
+body.a11y-light-background .text-gray-900,
+body.a11y-light-background .text-slate-900 {
+  color: #000000 !important;
+}
+
+

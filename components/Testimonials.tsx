@@ -40,12 +40,7 @@ export const Testimonials: React.FC = () => {
             <div key={review.id} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative">
               <Quote className="absolute top-6 right-6 text-gray-200 h-10 w-10 rotate-180" />
               
-              <div className="flex items-center space-x-4 mb-6">
-                <img 
-                    src={review.avatar} 
-                    alt={review.name} 
-                    className="h-12 w-12 rounded-full object-cover border-2 border-white shadow-sm"
-                />
+              <div className="mb-6">
                 <div>
                     <h4 className="font-bold text-gray-900">{review.name}</h4>
                     <p className="text-xs text-gray-500">{review.location}</p>
